@@ -3,24 +3,52 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="style.css">
   <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon-32x32.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap" rel="stylesheet"> 
   <title></title>
 </head>
 <body>
+  <div class="top-container">
+   <h1> devfinder </h1>
+    <div class="light-switch"> <span> DARK </span> <span class="hidden">LIGHT </span> <button role="switch" aria-label="light/dark mode" class="theme"></button> 
+  </div>  </div> 
+ <div class="search-container">   <form action="/">
+  <img src="./assets/icon-search.svg" class="search-icon"><input type="text"  class="search-input" placeholder="Search Github username.." id="search-input" name="search">
+  <button class="search-button" id="search-button" type="click">Search</button>
+</form></div>
 
-  devfinder
+<div class="info-div-container">
+  <div> <img alt="avatar" id="avatar" class="avatar" src="https://avatars.githubusercontent.com/u/583231?v=4"> </div>
+  <div>
+  <div class="user-info"> 
+ <div>
+<p class="name" id="name"> Ostocat </p>
+<p id="username" class=twitter_username> @octocat</p>
+ </div> <span class="created_at" id="created_at">  Joined 25 Jan 2011</span> 
+  </div>
 
-  Light
-  Dark
+<p class="profile-description" id="profile-description">Lorizzle ipsum dolizzle sizzle amizzle, dope phat fo shizzle. Get down get down bow wow wow velizzle, black volutpat, su </p> 
+<div class="social-numbers">
+<div><p class="category">Repos</p> <p class="larger-text repos" id="public_repos">8 </p></div>
+<div><p class="category"> Followers</p> <p class="larger-text followers" id="followers">3938 </p> </div>
+<div><p class="category"> Following </p> <p class="larger-text following" id="following"> 9 </p></div>
 
-  Search GitHub username...
-  Search
+</div>
 
-  Joined
+<div class="social-links"> 
+<div><img src="assets/icon-location.svg">  <span class="city" id="city">San Francisco </span></div>
+<div> <img src="assets/icon-twitter.svg"> <span class="twitter_username" id="twitter_username">  </span></div>
+<div> <img src="assets/icon-website.svg"> <spam class="blog" id="blog">https.//github.blog </spam></div>
+<div> <img src="assets/icon-company.svg"> <span class="company" id="company"> @github</span> </div>
 
-  Repos
-  Followers
-  Following
+</div>
 
+</div>
+</div>
+ 
 </body>
+<script src="script.js"></script>
 </html>
