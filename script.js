@@ -32,11 +32,11 @@ window.addEventListener('DOMContentLoaded', () => {
 //Fetching users and updating dom logic
 const $searchInput = document.getElementById('search-input')
 const $searchBtn = document.getElementById('search-button')
-const $avatar_url = "TBC"
+
 const $public_repos = document.getElementById('public_repos')
 
 document.querySelector("#search-button").addEventListener("click", async function(event) {
-      event.preventDefault();
+     event.preventDefault();
       let username = $searchInput.value
       
       try{
@@ -45,18 +45,18 @@ document.querySelector("#search-button").addEventListener("click", async functio
            .then(data => {
          const {name, bio, login, location, company, blog, twitter_username, created_at, avatar_url, public_repos, followers, following} = data
      
-            document.getElementById('name').innerHTML = name? name : 'Not available' 
-            document.getElementById('profile-description').innerHTML = bio? bio : 'Not available' 
-            document.getElementById('blog').innerHTML = blog? blog :  'Not available' 
-            document.getElementById('created_at').innerHTML = created_at? created_at :  'Not available' 
-          //$avatar_url = "TBC"
-          document.getElementById('public_repos').innerHTML = public_repos? public_repos :  'Not available' 
-          document.getElementById('followers').innerHTML = followers? followers  :  'Not available' 
-          document.getElementById('following').innerHTML = following? following :  'Not available' 
-          document.getElementById('company').innerHTML = company? company : 'Not available' 
-          document.getElementById('city').innerHTML = location ? location  : 'Not available' 
-          document.getElementById('twitter_username').innerHTML = twitter_username? twitter_username : 'Not available' 
-          document.getElementById('username').innerHTML = username
+            document.getElementById('name').innerText  = name? name : 'Not available' 
+            document.getElementById('profile-description').innerText  = bio? bio : 'Not available' 
+            document.getElementById('blog').innerText  = blog? blog :  'Not available' 
+            document.getElementById('created_at').innerText  = created_at? created_at :  'Not available' 
+            document.getElementById('avatar').src = avatar_url 
+          document.getElementById('public_repos').innerText  = public_repos? public_repos :  'Not available' 
+          document.getElementById('followers').innerText  = followers? followers  :  'Not available' 
+          document.getElementById('following').innerText  = following? following :  'Not available' 
+          document.getElementById('company').innerText  = company? company : 'Not available' 
+          document.getElementById('city').innerText  = location ? location  : 'Not available' 
+          document.getElementById('twitter_username').innerText  = twitter_username? twitter_username : 'Not available' 
+          document.getElementById('username').innerText  = username
         }
            )}
         catch (err) {
