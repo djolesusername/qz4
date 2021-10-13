@@ -40,6 +40,7 @@ window.addEventListener('DOMContentLoaded', () => {
 //Fetching users and updating dom logic
 const $searchInput = document.getElementById('search-input')
 const $searchBtn = document.getElementById('search-button')
+const $form = document.getElementById('form')
 
 const $public_repos = document.getElementById('public_repos')
 
@@ -75,6 +76,8 @@ const updateDom = async(username) => {
 if (data.login) {
     const {name, bio, location, company, blog, twitter_username, created_at, avatar_url, public_repos, followers, following} = data
     let d = new Date(created_at)
+    $form.classList.remove('special')
+
           document.getElementById('name').innerText  = name? name : username 
           document.getElementById('profile-description').innerText  = bio? bio :  'This profile has no bio' 
           document.getElementById('created_at').innerText = created_at? 'Joined at ' + d.toDateString().split(',').toString().slice(4) :  'Not available' 
@@ -136,8 +139,8 @@ if (data.login) {
 
 
     const handleError = () => {
-        console.log('activate after errir')
-    }
+        $form.classList.add('special')
+        }
 
  window.addEventListener('DOMContentLoaded', () => {
     updateDom('octocat')
