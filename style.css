@@ -18,7 +18,8 @@
         --black-dl: hsl(220, 40%, 13%);
         --light-blue-l: hsl(227, 100%, 98%);
         --white-l: hsl(0, 0, 100%);
-        --navy-d: hsl(222, 41%, 20%)
+        --navy-d: hsl(222, 41%, 20%);
+        --hover-text: var(--grey-l);
     }
 
 }
@@ -37,6 +38,7 @@
     --textcolor: white;
     --heading-color: white;
     --text-opacity: var(--grey-l);
+    --hover-text: var(--grey-l);
    }
 
 [color-scheme="light"] {
@@ -54,6 +56,7 @@
     --container-background: white;
     --heading-color: var(--black-dl);
     --text-opacity: var(--grey-l-opacity);
+    --hover-text: var(--black-dl);
 }
 
 body {
@@ -74,12 +77,26 @@ body {
 .light-switch {
     margin: auto 1em;
     color:  var(--textcolor);
+    letter-spacing: 2px;
+
 }
 
-.theme:is(:hover, :focus) {
-background-color: var(--white-l);
-opacity: .8;
+h1 {
+    color: var(--heading-color);
 }
+.theme:is(:hover, :focus) {
+color: var( --hover-text);
+opacity: 100;
+
+}
+.light-switch:hover,
+.light-switch button:hover{
+    color: var( --hover-text)!important;
+    cursor: pointer;
+    opacity: 0.5;
+
+}
+
 .top-container,  .info-div-container {
     display: flex;
     margin: 6% 22%;
@@ -98,16 +115,16 @@ opacity: .8;
     grid-template-rows: 130px minmax(40px, min-content) 100px 100px;
 
 }
+.top-container {
+    justify-content: space-between;
+
+}
 
 .search-input:focus, textarea:focus, select:focus{
     outline: none;
 }
 
-.top-container {
-    justify-content: space-between;
- }   
-
-   
+  
 .search-container form {
     margin: 2% 22%;
     background-color: var(--container-background);
@@ -247,6 +264,8 @@ color: var(--heading-color);
     font-size: 2rem;
     margin-bottom: 0;
     padding-bottom: 0;
+    color: var(--heading-color);
+    font-weight: bold;
     
 }
 
@@ -336,6 +355,7 @@ color: var(--blue-dl);
 @media only screen and (max-width: 650px) {
     #form:after {
       right: 23%;
+      font-size: 0.8rem;
      
         }
     .top-container,  .info-div-container {
@@ -370,6 +390,9 @@ color: var(--blue-dl);
         .larger-text{
             font-size: 1.3rem;
 
+}
+.search-input {
+    font-size: 0.8rem;
 }
 
 }
